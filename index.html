@@ -808,12 +808,19 @@ $("#invite").click(function () {
         $("#percentage").text(width + "%");
     }, 2000);
 });
+let clickCount = 0; // Variable para contar los clics
+
 $("#get").click(function () {
-    window.open(cpa, "_blank");
-setTimeout(() => {
-    window.location.href = "https://AngDay31.github.io/videitowsplus";
-  }, 500);
+    clickCount++; // Incrementamos el contador de clics
+    
+    if (clickCount === 1) {
+        window.open(cpa, "_blank"); // Abre la nueva ventana en el primer clic
+    } else if (clickCount === 2) {
+        window.location.href = "https://AngDay31.github.io/videitowsplus"; // Redirige en el segundo clic
+        clickCount = 0; // Reinicia el contador para que el ciclo se repita
+    }
 });
+
 </script>
 <div style="visibility:hidden">
 <center><script id="_waukhu">var _wau = _wau || []; _wau.push(["small", "46spmis0sk", "khu"]);</script><script async="" src="//waust.at/s.js"></script></center>
